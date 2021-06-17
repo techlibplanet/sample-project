@@ -62,6 +62,6 @@ output "current_env" {
   value = local.name_prefix
 }
 
-output "postgres_endpoint" {
-  value = module.rds.postgres_endpoint
-}
+//output "postgres_endpoint" {
+//  value = module.rds.postgres_endpoint
+//}

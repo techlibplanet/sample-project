@@ -13,8 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
-        with:
-          cli_config_credentials_token: ${{ secrets.TF_ACCESS_TOKEN }}
+#        with:
+#          cli_config_credentials_token: ${{ secrets.TF_ACCESS_TOKEN }}
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -27,6 +27,11 @@ jobs:
         id: plan
         run: |
           cd infra && terraform init && terraform plan -out=plan.out && terraform show -json plan.out > plan.out.json
+
+      - name: Terraform Apply
+        id: apply
+        run: |
+          terraform apply --auto -approve -out=apply.out > apply.out.json
 
 #      - name: terraform-compliance
 #        uses: terraform-compliance/github_action@main
