@@ -31,7 +31,7 @@ jobs:
       - name: Terraform Apply
         id: apply
         run: |
-          terraform apply --auto -approve -out=apply.out > apply.out.json
+          terraform apply --auto -approve -out=apply.out && terraform show -json apply.out > apply.out.json
 
 #      - name: terraform-compliance
 #        uses: terraform-compliance/github_action@main
