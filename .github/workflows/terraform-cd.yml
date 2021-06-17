@@ -32,13 +32,13 @@ jobs:
         id: validate
         run: cd infra && terraform validate -no-color
 
-      - name: Get Terraform State
-        id: tfState
-        uses: ./infra/get-terraform-state
-        with:
-          organization: wwt-hyd
-          workspace: quick-restaurant-${{steps.workspace.outputs.TARGET_WORKSPACE}}
-          terraformApiToken: ${{secrets.TF_ACCESS_TOKEN}}
+#      - name: Get Terraform State
+#        id: tfState
+#        uses: ./infra/get-terraform-state
+#        with:
+#          organization: wwt-hyd
+#          workspace: quick-restaurant-${{steps.workspace.outputs.TARGET_WORKSPACE}}
+#          terraformApiToken: ${{secrets.TF_ACCESS_TOKEN}}
 
 
       - name: Terraform Plan
