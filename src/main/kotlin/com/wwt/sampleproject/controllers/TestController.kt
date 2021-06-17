@@ -11,6 +11,6 @@ class TestController {
 
     @GetMapping
     fun getUsers(): String {
-        return "App connected successfully!"
+        return "You have successfully deployed to AWS!"
     }
 }

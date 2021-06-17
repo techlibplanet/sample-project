@@ -1,6 +1,6 @@
 
 resource "aws_ecr_repository" "quizzer-ecr-repo" {
-  name                 = "${local.name_prefix}-quizzer-ecr-repo"
+  name                 = "sample-project-repo"/*"${local.name_prefix}-quizzer-ecr-repo"*/
   image_tag_mutability = "MUTABLE"
 
   image_scanning_configuration {
