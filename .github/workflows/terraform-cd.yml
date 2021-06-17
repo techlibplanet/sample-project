@@ -24,6 +24,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          # terraform_version: 0.13.0
+          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+
       - name: Terraform Init
         id: init
         run: cd infra && terraform init
@@ -32,13 +38,13 @@ jobs:
         id: validate
         run: cd infra && terraform validate -no-color
 
-      - name: Get Terraform State
-        id: tfState
-        uses: ./infra/terraform.tfstate
-        with:
-          organization: wwt-hyd
-          workspace: quick-restaurant-${{steps.workspace.outputs.TARGET_WORKSPACE}}
-          terraformApiToken: ${{secrets.TF_ACCESS_TOKEN}}
+#      - name: Get Terraform State
+#        id: tfState
+#        uses: ./infra/terraform.tfstate
+#        with:
+#          organization: wwt-hyd
+#          workspace: quick-restaurant-${{steps.workspace.outputs.TARGET_WORKSPACE}}
+#          terraformApiToken: ${{secrets.TF_ACCESS_TOKEN}}
 
 
       - name: Terraform Plan
