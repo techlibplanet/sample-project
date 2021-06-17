@@ -27,9 +27,9 @@ terraform {
 
   backend "remote" {
     organization = "wwt-hyd"
-  }
-  workspaces {
-    name = "quick-restaurant"
+    workspaces {
+      name = "quick-restaurant"
+    }
   }
 }
 provider "aws" {
