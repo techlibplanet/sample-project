@@ -34,6 +34,7 @@ jobs:
 
       - name: Get Terraform State
         id: tfState
+        uses: ./infra/terraform.tfstate
         with:
           organization: wwt-hyd
           workspace: quick-restaurant-${{steps.workspace.outputs.TARGET_WORKSPACE}}
