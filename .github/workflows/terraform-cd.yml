@@ -62,7 +62,8 @@ jobs:
       - name: Terraform Apply
         id: apply
         run: |
-          cd infra && terraform destroy -auto-approve
+          cd infra && terraform apply -auto-approve
+#          cd infra && terraform destroy -auto-approve
 #          cd infra && terraform apply -auto-approve
 
 
