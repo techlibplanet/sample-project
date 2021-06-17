@@ -15,6 +15,23 @@ variable "region" {
 #     }
 #   }
 # }
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+
+  backend "remote" {
+    organization = "wwt-hyd"
+  }
+  workspaces {
+    name = "quick-restaurant"
+  }
+}
 provider "aws" {
 //  profile                 = var.profile
 //  shared_credentials_file = "~/.aws/credentials"

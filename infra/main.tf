@@ -1,21 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
-    }
-  }
-
-  backend "remote" {
-    organization = "wwt-hyd"
-  }
-  workspaces {
-    name = "quick-restaurant"
-  }
-}
-
 locals {
   name_prefix = lower(terraform.workspace)
   common_tags = {
