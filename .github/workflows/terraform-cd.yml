@@ -56,7 +56,8 @@ jobs:
       - name: Terraform Apply
         id: apply
         run: |
-          cd infra && terraform apply -auto-approve
+#          cd infra && terraform apply -auto-approve
+          cd infra && terraform destroy
 
 #      - name: terraform-compliance
 #        uses: terraform-compliance/github_action@main
