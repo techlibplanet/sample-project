@@ -4,7 +4,10 @@
     "memory": 1024,
     "name": "quizzer-service",
     "cpu": 256,
-    "image": "${REPOSITORY_URL}:latest",
+    "image": "ghcr.io/techlibplanet/sample-project:latest",
+    "repositoryCredentials": {
+    "credentialsParameter": "GITHUB_READ_PACKAGE"
+    },
     "portMappings": [
       {
         "containerPort": 8080
