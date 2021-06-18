@@ -4,7 +4,7 @@
     "memory": 1024,
     "name": "quizzer-service",
     "cpu": 256,
-    "image": "ghcr.io/sharmamwwt/quickrestaurantonboarding/adminui:latest",
+    "image": "ghcr.io/techlibplanet/sample-project:latest",
     "repositoryCredentials": {
       "credentialsParameter": "GITHUB_READ_PACKAGE"
     },
