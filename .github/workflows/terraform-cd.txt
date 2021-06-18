@@ -1,0 +1,74 @@
+#name: Terraform
+#
+#on:
+#  push:
+#    branches: '**'
+##  pull_request:
+##    branches: [ dev ]
+#
+#jobs:
+#  terraform:
+#    name: terraform CI
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: hashicorp/setup-terraform@v1
+#        with:
+#          cli_config_credentials_token: ${{ secrets.TF_ACCESS_TOKEN }}
+#
+#
+#      - name: Configure AWS credentials
+#        uses: aws-actions/configure-aws-credentials@v1
+#        with:
+#          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#          aws-region: us-east-1
+#
+#      - name: Setup Terraform
+#        uses: hashicorp/setup-terraform@v1
+#        with:
+#          # terraform_version: 0.13.0
+#          cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+#
+#      - name: Terraform Init
+#        id: init
+#        run: cd infra && terraform init
+#
+#      - name: Terraform Validate
+#        id: validate
+#        run: cd infra && terraform validate -no-color
+#
+##      - name: Get Terraform State
+##        id: tfState
+##        uses: ./infra/terraform.tfstate
+##        with:
+##          organization: wwt-hyd
+##          workspace: quick-restaurant-${{steps.workspace.outputs.TARGET_WORKSPACE}}
+##          terraformApiToken: ${{secrets.TF_ACCESS_TOKEN}}
+#
+#
+#      - name: Terraform Plan
+#        id: plan
+#        #        if: github.event_name == 'pull_request'
+#        run: cd infra && terraform plan -no-color -out=plan.out && terraform show -json plan.out > plan.out.json
+#        continue-on-error: true
+#
+#
+##      - name: terraform plan
+##        id: plan
+##        run: |
+##          cd infra && terraform init && terraform plan -out=plan.out && terraform show -json plan.out > plan.out.json
+#
+#      - name: Terraform Apply
+#        id: apply
+#        run: |
+#          cd infra && terraform destroy -auto-approve
+##          cd infra && terraform destroy -auto-approve
+##          cd infra && terraform apply -auto-approve
+#
+#
+##      - name: terraform-compliance
+##        uses: terraform-compliance/github_action@main
+##        with:
+##          plan: plan.out.json
+##          features: ssh://git@github.com/terraform-compliance/user-friendly-features.git

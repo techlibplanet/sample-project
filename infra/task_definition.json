@@ -4,7 +4,10 @@
     "memory": 1024,
     "name": "quizzer-service",
     "cpu": 256,
-    "image": "${REPOSITORY_URL}:latest",
+    "image": "ghcr.io/sharmamwwt/quickrestaurantonboarding/adminui:latest",
+    "repositoryCredentials": {
+      "credentialsParameter": "GITHUB_READ_PACKAGE"
+    },
     "environment": [
       {
         "name": "SPRING_DATASOURCE_URL",
