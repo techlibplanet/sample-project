@@ -31,5 +31,5 @@
 "requiresCompatibilities": [
 "FARGATE"
 ],
-"cpu": "256",
+"cpu": "256"
 }
