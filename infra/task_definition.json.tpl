@@ -1,5 +1,4 @@
 {
-    "executionRoleArn": "arn:aws:iam::786054985583:role/default-quizzer-ecs-instance-role",
     "containerDefinitions": [{
         "logConfiguration": {
             "logDriver": "awslogs",
@@ -22,7 +21,6 @@
         "name": "quizzer_service"
     }],
     "memory": 1024,
-    "taskRoleArn": "arn:aws:iam::786054985583:role/default-quizzer-ecs-instance-role",
     "requiresCompatibilities": [
         "FARGATE"
     ],
