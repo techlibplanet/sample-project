@@ -17,7 +17,7 @@
           {
             "containerPort": 8080
           }
-        ],
+        ]
       }
     ],
     "logConfiguration": {
