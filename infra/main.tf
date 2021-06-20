@@ -52,6 +52,7 @@ EOF
   vpc_id = aws_vpc.vpc.id
 }*/
 
+
 resource "aws_iam_user_policy_attachment" "github-ci-policy-attachment" {
   user       = aws_iam_user.github-ci.name
   policy_arn = aws_iam_policy.github-ci-access-policy.arn
