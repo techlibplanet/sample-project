@@ -9,8 +9,8 @@
       {
         "secrets": [
           {
-            "name": "GITHUB_READ_PACKAGE",
-            "valueFrom": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE-Je0WKe"
+            "name": "GITHUB_READ_PACKAGE_1",
+            "valueFrom": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE_1-NehK1l"
           }
         ]
       }
