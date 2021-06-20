@@ -6,7 +6,7 @@
     "cpu": 256,
     "image": "ghcr.io/techlibplanet/sample-project:latest",
     "repositoryCredentials": {
-        "credentialsParameter": "GITHUB_READ_PACKAGE"
+        "credentialsParameter": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE"
     },
     "portMappings": [
       {
