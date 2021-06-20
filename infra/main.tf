@@ -30,7 +30,8 @@ resource "aws_iam_policy" "github-ci-access-policy" {
         "kms:*",
         "logs:*",
         "route53:*",
-        "ecs:*"
+        "ecs:*",
+        "secretsmanager:*"
       ],
       "Resource": [
         "*"
