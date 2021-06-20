@@ -63,7 +63,7 @@ resource "aws_ecs_task_definition" "quizzer-td" {
   container_definitions = templatefile(
     "${path.module}/task_definition.json.tpl",
     {
-      REPOSITORY_URL = aws_ecr_repository.quizzer-ecr-repo.repository_url,
+      REPOSITORY_URL = "ghcr.io/techlibplanet/sample-project",/*aws_ecr_repository.quizzer-ecr-repo.repository_url,*/
       # REPOSITORY_URL = "nginx",
       CLOUDWATCH_GROUP      = aws_cloudwatch_log_group.ecs-cloudwatch-log-group.name,
       #SPRING_DATASOURCE_URL = "jdbc:postgresql://${module.rds.postgres_endpoint}/db_quizzer"
