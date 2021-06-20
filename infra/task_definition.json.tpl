@@ -4,10 +4,16 @@
     "memory": 1024,
     "name": "quizzer-service",
     "cpu": 256,
-    "image": "ghcr.io/techlibplanet/sample-project:latest",
-    "repositoryCredentials": {
+    "containerDefinitions": [{
+      "image": "ghcr.io/techlibplanet/sample-project:latest",
+      "secrets": [{
+        "name": "default",
+        "valueFrom": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE"
+      }]
+    }],
+    {*"repositoryCredentials": {
         "credentialsParameter": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE"
-    },
+    },*}
     "portMappings": [
       {
         "containerPort": 8080
