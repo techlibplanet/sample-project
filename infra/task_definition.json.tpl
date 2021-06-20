@@ -4,9 +4,9 @@
     "memory": 1024,
     "name": "quizzer-service",
     "cpu": 256,
-    "image": "ghcr.io/techlibplanet/sample-project:latest",
     "containerDefinitions": [
       {
+        "image": "ghcr.io/techlibplanet/sample-project:latest",
         "secrets": [
           {
             "name": "GITHUB_READ_PACKAGE_1",
