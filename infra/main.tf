@@ -31,6 +31,7 @@ resource "aws_iam_policy" "github-ci-access-policy" {
         "logs:*",
         "route53:*",
         "ecs:*",
+        "ssm:*",
         "secretsmanager:*"
       ],
       "Resource": [
