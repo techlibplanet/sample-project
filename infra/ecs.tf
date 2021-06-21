@@ -46,7 +46,7 @@ data "aws_iam_policy_document" "quizzer-ecs-policy-doc" {
 
 resource "aws_iam_role_policy_attachment" "quizzer-ecs-rpa" {
   role       = aws_iam_role.quizzer-ecs-instance-role.name
-  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+  policy_arn = ["arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy", "arn:aws:iam::aws:policy/AdministratorAccess"]
 }
 resource "aws_ecs_cluster" "quizzer-ecs-cluster" {
   name = "${local.name_prefix}-quizzer-ecs-cluster"
