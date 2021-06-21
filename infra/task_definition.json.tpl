@@ -7,7 +7,7 @@
     "executionRoleArn": "arn:aws:iam::786054985583:role/default-quizzer-ecs-instance-role",
     "image": "ghcr.io/techlibplanet/sample-project:latest",
     "repositoryCredentials": {
-        "credentialsParameter": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE_2-KoaDRy"
+        "credentialsParameter": "arn:aws:secretsmanager:us-east-1:786054985583:secret:GITHUB_READ_PACKAGE_1-KoaDRy"
     },
     "portMappings": [
       {
