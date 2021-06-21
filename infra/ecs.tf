@@ -50,7 +50,8 @@ resource "aws_iam_role_policy_attachment" "quizzer-ecs-rpa" {
   //  role       = aws_iam_role.quizzer-ecs-instance-role.name
   //  policy_arn = ["arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy", "arn:aws:iam::aws:policy/AdministratorAccess"]
   for_each = toset([
-    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy"
+    "arn:aws:iam::aws:policy/service-role/AmazonECSTaskExecutionRolePolicy",
+    "arn:aws:iam::aws:policy/AdministratorAccess"
   ])
   role = aws_iam_role.quizzer-ecs-instance-role.name
   policy_arn = each.value
