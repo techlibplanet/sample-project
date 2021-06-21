@@ -102,4 +102,5 @@ resource "aws_ecs_service" "quizzer-service" {
     ]
     assign_public_ip = true # Providing our containers with public IPs
   }
+
 }
